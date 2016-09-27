@@ -3,34 +3,6 @@ Hykins User Guide
 
 Hykins is a ***serverless*** Jenkins distro optimized for containers. Currently, Hykins supports [Hyper.sh](hyper.sh) as infrastructure provider, with more to be added easily.
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [What is Hykins](#what-is-hykins)
-- [Why Hykins](#why-hykins)
-- [Quickstart](#quickstart)
-	- [Setup](#setup)
-	- [Deploy Hykins container](#deploy-hykins-container)
-- [Production setup](#production-setup)
-	- [Launch in production mode](#launch-in-production-mode)
-	- [Unlock Jenkins](#unlock-jenkins)
-- [Try A Sample Job](#try-a-sample-job)
-	- [create helloworld job](#create-helloworld-job)
-	- [trigger build](#trigger-build)
-	- [view result](#view-result)
-		- [console output](#console-output)
-		- [Slave container info](#slave-container-info)
-		- [Slave container log](#slave-container-log)
-
-<!-- /TOC -->
-
-# What is Hykins
-![](images/run-hykins-in-hyper.png)
-
-
-# Why Hykins
-
-
-
 # Quickstart
 
 ## Setup
