@@ -10,12 +10,33 @@ println "JENKINS_URL: " + jenkins_url
 
 def jlc = JenkinsLocationConfiguration.get()
 if (jenkins_url){
-  println "JENKINS_URL specified"
+  println "set 'Jenkins URL' via JENKINS_URL"
 } else {
-  def hostname = InetAddress.localHost.canonicalHostName
-  def ip = InetAddress.getByName(hostname).address.collect { it & 0xFF }.join('.')
+  def found = false
+  def hostname = ""
+  def ip = ""
+  try {
+    hostname = InetAddress.localHost.canonicalHostName
+    ip = InetAddress.getByName(hostname).address.collect { it & 0xFF }.join('.')
+  } catch(Exception ex) {
+    println("Can not get ip via hostname, now get ip from network interface");
+    def interfaces = NetworkInterface.getNetworkInterfaces()
+    while (interfaces.hasMoreElements() && !found) {
+      def addresses = interfaces.nextElement().getInetAddresses()
+      while (addresses.hasMoreElements() && !found) {
+        InetAddress address = addresses.nextElement();
+        if (!address.isLoopbackAddress() && address.getHostName().indexOf(".hypernetes")>0){
+          ip = address.getHostAddress()
+          hostname = address.getHostName()
+          found = true
+        }
+      }
+    }
+  }
+  println ip + " => " + hostname
   jenkins_url = "http://"+ip+":8080/"
   println "No JENKINS_URL, use internal ip :" + ip
+
 }
 
 jlc.setUrl(jenkins_url)
