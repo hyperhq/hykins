@@ -1,7 +1,7 @@
 Hykins User Guide
 =======================================================
 
-Hykins is a ***serverless*** Jenkins distro optimized for containers. Currently, Hykins supports [hyper.sh](hyper.sh) as infrastructure provider, with more to be added easily.
+Hykins is a ***serverless*** Jenkins distro optimized for containers. Currently, Hykins supports [Hyper.sh](hyper.sh) as infrastructure provider, with more to be added easily.
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -34,7 +34,7 @@ Hykins is a ***serverless*** Jenkins distro optimized for containers. Currently,
 # Quickstart
 
 ## Setup
-First, you need to setup your account on [hyper.sh](hyper.sh):
+First, you need to setup your account on [Hyper.sh](hyper.sh):
 
 - [Create an account](https://console.hyper.sh/register)
 - [Provide your billing information and complete your account](https://console.hyper.sh/billing/credit)
@@ -42,7 +42,7 @@ First, you need to setup your account on [hyper.sh](hyper.sh):
 - [Generate a credential and configure the CLI](https://docs.hyper.sh/GettingStarted/launch_the_first_container.html)
 
 ## Deploy Hykins container
-There is a prebaked Docker image for [Hykins](https://hub.docker.com/r/hyperhq/hykins/) available in Docker Hub. You can simply pull the image to your Hyper_ account:
+There is a prebaked Docker image for [Hykins](https://hub.docker.com/r/hyperhq/hykins/) available in Docker Hub. You can simply pull the image to your Hyper.sh account:
 
 ``` bash
 $ hyper pull hyperhq/hykins
@@ -53,9 +53,10 @@ $ hyper pull hyperhq/hykins
 > - `hyper` command line tools
 > - `hyper-slaves-plugin` for Jenkins
 > - Recommended plugins by Jenkins community
+
 > You can find the Dockerfile [here](https://github.com/hyperhq/hykins/blob/master/Dockerfile).
 
-To deploy Hykins in hyper.sh:
+To deploy Hykins in Hyper.sh:
 ```
 $ hyper run --name hykins -d -P \
   --size=m1 \
@@ -70,9 +71,9 @@ $ hyper run --name hykins -d -P \
 > - By default, Hykins is launched in `development` mode. See [blow](#production-setup) to see how to run Hykins in production mode
 > - In `development` mode, the recommended container size is `m1` (1GB)
 > - `ADMIN_USERNAME`/ `ADMIN_PASSWORD` is for the Hykins admin account (default: `admin`/`nimda`)
-> - `ACCESS_KEY`/ `SECRET_KEY` is the API credential of hyper.sh
+> - `ACCESS_KEY`/ `SECRET_KEY` is the API credential of Hyper.sh
 
-Containers in hyper.sh come without public IP address by default. To enable Internet access, you need to request one and attach to the container:
+Containers in Hyper.sh come without public IP address by default. To enable Internet access, you need to request one and attach to the container:
 ```
 $ FIP=`hyper fip allocate 1`
 $ hyper fip attach $FIP hykins
@@ -108,7 +109,7 @@ In Production Mode, you need to unlock Jenkins to be able to access:
 ```
 //Step 1: create "Freestyle project" helloworld
 
-//Step 2: check "Run the build inside Hyper_ container"
+//Step 2: check "Run the build inside Hyper.sh container"
    - Docker Image: jenkinsci/slave
    - Container Size: S4
 ```
