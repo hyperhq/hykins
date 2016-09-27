@@ -75,7 +75,7 @@ In Production Mode, you need to unlock Jenkins to be able to access:
 
 # Try A Sample Job
 
-![](images/run-jenkins-job-in-hyper-slave.png)
+![](https://raw.githubusercontent.com/hyperhq/hykins/master/images/run-jenkins-job-in-hyper-slave.png)
 
 ## create helloworld job
 ```
@@ -86,7 +86,7 @@ In Production Mode, you need to unlock Jenkins to be able to access:
    - Container Size: S4
 ```
 
-![](images/job-general-config.png)
+![](https://raw.githubusercontent.com/hyperhq/hykins/master/images/job-general-config.png)
 
 Other tested base images are:
  - openjdk:8-jdk
@@ -99,7 +99,7 @@ Other tested base images are:
   - Command:
 ```
 
-![](images/build-step.png)  
+![](https://raw.githubusercontent.com/hyperhq/hykins/master/images/build-step.png)
 
 Here is the shell script:
 ```
@@ -115,15 +115,15 @@ echo ------------------------------------------------
 
 ## trigger build
 Trigger build manually in this demo.
-![](images/manually-build.png)
+![](https://raw.githubusercontent.com/hyperhq/hykins/master/images/manually-build.png)
 
 ## view result
 
 ### console output
-![](images/output-console.png)
+![](https://raw.githubusercontent.com/hyperhq/hykins/master/images/output-console.png)
 
 ### Slave container info
-![](images/hyper-slave-container-info.png)
+![](https://raw.githubusercontent.com/hyperhq/hykins/master/images/hyper-slave-container-info.png)
 
 ### Slave container log
-![](images/hyper-slave-container-log.png)
+![](https://raw.githubusercontent.com/hyperhq/hykins/master/images/hyper-slave-container-log.png)
