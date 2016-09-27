@@ -4,21 +4,23 @@ Hykins User Guide
 Hykins is a ***serverless*** Jenkins distro optimized for containers. Currently, Hykins supports [hyper.sh](hyper.sh) as infrastructure provider, with more to be added easily.
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
 - [What is Hykins](#what-is-hykins)
-- [Why Hypkins](#why-hykins)
+- [Why Hykins](#why-hykins)
 - [Quickstart](#quickstart)
 	- [Setup](#setup)
 	- [Deploy Hykins container](#deploy-hykins-container)
-- [Prduction setup](#production-setup)
+- [Production setup](#production-setup)
 	- [Launch in production mode](#launch-in-production-mode)
 	- [Unlock Jenkins](#unlock-jenkins)
-- [Try a sample job](#try-a-sample-job)
+- [Try A Sample Job](#try-a-sample-job)
 	- [create helloworld job](#create-helloworld-job)
 	- [trigger build](#trigger-build)
 	- [view result](#view-result)
 		- [console output](#console-output)
 		- [Slave container info](#slave-container-info)
 		- [Slave container log](#slave-container-log)
+
 <!-- /TOC -->
 
 # What is Hykins
@@ -26,6 +28,8 @@ Hykins is a ***serverless*** Jenkins distro optimized for containers. Currently,
 
 
 # Why Hykins
+
+
 
 # Quickstart
 
@@ -37,45 +41,11 @@ First, you need to setup your account on [hyper.sh](hyper.sh):
 - [Install `hyper` CLI on your laptop](https://docs.hyper.sh/GettingStarted/install.html)
 - [Generate a credential and configure the CLI](https://docs.hyper.sh/GettingStarted/launch_the_first_container.html)
 
-### Deploy Hykins container
+## Deploy Hykins container
 There is a prebaked Docker image for [Hykins](https://hub.docker.com/r/hyperhq/hykins/) available in Docker Hub. You can simply pull the image to your Hyper_ account:
 
 ``` bash
 $ hyper pull hyperhq/hykins
-hyper pull hyperhq/hykins
-Using default tag: latest
-latest: Pulling from hyperhq/hykins
-
-6a5a5368e0c2: Pull complete
-7b9457ec39de: Pull complete
-ff18e19c2db4: Pull complete
-edd38215a2fa: Pull complete
-5b26cafa72d5: Pull complete
-f340301a2a0f: Pull complete
-e8512ca75830: Pull complete
-c76b0eeb6b4d: Pull complete
-4e3006d37224: Pull complete
-88ff00dc0e42: Pull complete
-37d4b7b9d6e6: Pull complete
-20cfdf921064: Pull complete
-40bfe64a18ed: Pull complete
-5edeed12b6b9: Pull complete
-1f2bc7d49cb7: Pull complete
-979d862d32a2: Pull complete
-7a4f6028d1bc: Pull complete
-3a73375f5728: Pull complete
-a90e6b75bbcf: Pull complete
-d888c6ccf803: Pull complete
-271c606ae28e: Pull complete
-40c348bd2d4b: Pull complete
-8a8188eb6f90: Pull complete
-0743fa347b1b: Pull complete
-8b0445be40ea: Pull complete
-096ea0e14f69: Pull complete
-3958a11cb809: Pull complete
-41211732e552: Pull complete
-Digest: sha256:c4f725cd198dcca93e0b085086ea0829390db3313d49891c597b4abc2f1e86d8
-Status: Downloaded newer image for hyperhq/hykins:latest
 ```
 
 > **What's in the image?**
