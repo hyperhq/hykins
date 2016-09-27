@@ -14,9 +14,9 @@ usage: ./util.sh <ACTION> [VERSION]
   hyper    - run jenkins-server in Hyper_
 
 [VERSION]:
-  lts             - jenkins             -> hyperhq/hyperkins:<LTS_VERSION>, latest
-  latest          - jenkinsci/jenkins   -> hyperhq/hyperkins:dev-<ver>, dev-latest
-  <specified_ver> - jenkinsci/jenkins   -> hyprehq/hyperkins:dev-<ver>
+  lts             - jenkins             -> hyperhq/hykins:<LTS_VERSION>, latest
+  latest          - jenkinsci/jenkins   -> hyperhq/hykins:dev-<ver>, dev-latest
+  <specified_ver> - jenkinsci/jenkins   -> hyperhq/hykins:dev-<ver>
 
 EOF
   exit 1
@@ -24,20 +24,20 @@ EOF
 
 function fn_build() {
   docker build --pull \
-    --tag hyperhq/hyperkins:${TAG} .
+    --tag hyperhq/hykins:${TAG} .
 }
 
 function fn_push() {
 
   echo "--------------------------------------------------"
-  echo "starting push [hyperhq/hyperkins:${TAG}]"
-  docker push hyperhq/hyperkins:${TAG}
+  echo "starting push [hyperhq/hykins:${TAG}]"
+  docker push hyperhq/hykins:${TAG}
 
   if [ "${LATEST_TAG}" != "" ];then
     echo "--------------------------------------------------"
-    echo "starting push [hyperhq/hyperkins:latest]"
-    docker tag hyperhq/hyperkins:${TAG} hyperhq/hyperkins:${LATEST_TAG}
-    docker push hyperhq/hyperkins:${LATEST_TAG}
+    echo "starting push [hyperhq/hykins:latest]"
+    docker tag hyperhq/hykins:${TAG} hyperhq/hykins:${LATEST_TAG}
+    docker push hyperhq/hykins:${LATEST_TAG}
   fi
 }
 
@@ -47,18 +47,18 @@ function fn_run_in_docker() {
   echo ">start new container in docker"
   docker run --name jenkins-server-dev \
     -d -P \
-    hyperhq/hyperkins
+    hyperhq/hykins
 }
 
 function fn_run_in_hyper() {
   echo ">delete old container"
   hyper rm -v -f jenkins-server-dev >/dev/null 2>&1
-  echo ">pull image hyperhq/hyperkins"
-  hyper pull hyperhq/hyperkins
+  echo ">pull image hyperhq/hykins"
+  hyper pull hyperhq/hykins
   echo ">start new container in hyper"
   hyper run --name jenkins-server-dev \
     -d -P \
-    hyperhq/hyperkins
+    hyperhq/hykins
   cat <<EOF
 
 ---------------------------------------

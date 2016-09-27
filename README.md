@@ -58,6 +58,7 @@ To run Hykins in production mode, use the following command:
 
 ```
 $ hyper run --name hykins -d -P --size=m2 -e PRODUCTION=true \
+  -v hykins-data:/var/jenkins_home \
   -e ACCESS_KEY=xxxxx -e SECRET_KEY=xxxx hyperhq/hykins
 $ FIP=`hyper fip allocate 1`
 $ hyper fip attach $FIP hykins
