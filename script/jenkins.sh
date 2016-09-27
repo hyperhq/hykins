@@ -77,14 +77,14 @@ else
   # skip setup wizard
   echo "(skip setup wizard)"
   if [ -f $JENKINS_HOME/init.groovy.d/basic-security.groovy ];then
-      echo "jenkins initialize already, rename 'basic-security.groovy' and skip!"
+      echo "jenkins initialize admin account already, rename 'basic-security.groovy' and skip!"
       mv $JENKINS_HOME/init.groovy.d/basic-security.groovy $JENKINS_HOME/init.groovy.d/basic-security.groovy.bak
       rm -rf /var/lib/jenkins/init.groovy.d/basic-security.groovy >/dev/null 2>&1
   elif [ -f $JENKINS_HOME/init.groovy.d/basic-security.groovy.bak ];then
-      echo "jenkins initialize already, skip!"
+      echo "jenkins initialize admin account already, skip!"
       rm -rf /var/lib/jenkins/init.groovy.d/basic-security.groovy >/dev/null 2>&1
   elif [ -f /var/lib/jenkins/init.groovy.d/basic-security.groovy ];then
-      echo "initialize..."
+      echo "initialize admin account..."
       mv /var/lib/jenkins/init.groovy.d/basic-security.groovy $JENKINS_HOME/init.groovy.d/basic-security.groovy
       mv /var/lib/jenkins/jenkins.install.UpgradeWizard.state $JENKINS_HOME/jenkins.install.UpgradeWizard.state
       if [ "${ADMIN_PASSWORD}" == "" ];then
@@ -107,6 +107,13 @@ EOF
   fi
   export JAVA_OPTS="-Dhudson.Main.development=true -Djenkins.install.runSetupWizard=false"
   echo "==============================="
+fi
+
+
+#copy setup-jenkins-script.groovy
+if [ -f /var/lib/jenkins/init.groovy.d/setup-jenkins-script.groovy ];then
+  echo "override setup-jenkins-script.groovy"
+  cp /var/lib/jenkins/init.groovy.d/setup-jenkins-script.groovy $JENKINS_HOME/init.groovy.d/
 fi
 
 # if `docker run` first argument start with `--` the user is passing jenkins launcher arguments

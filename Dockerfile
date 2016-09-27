@@ -48,7 +48,8 @@ ENV ADMIN_PASSWORD ${ADMIN_PASSWORD:-nimda}
 
 ## prepare scipt
 RUN mkdir -p /var/lib/jenkins/init.groovy.d
-COPY disableSetupWizard/basic-security.groovy /var/lib/jenkins/init.groovy.d/basic-security.groovy
+COPY groovy/disableSetupWizard/basic-security.groovy /var/lib/jenkins/init.groovy.d/basic-security.groovy
+COPY groovy/initJenkinsURL/setup-jenkins-script.groovy /var/lib/jenkins/init.groovy.d/setup-jenkins-script.groovy
 RUN echo $JENKINS_VERSION > /var/lib/jenkins/jenkins.install.UpgradeWizard.state
 
 # replace the original jenkins.sh
@@ -62,6 +63,12 @@ ENV SECRET_KEY ${SECRET_KEY:-}
 ENV DOCKER_HUB_USERNAME ${DOCKER_HUB_USERNAME:-}
 ENV DOCKER_HUB_PASSWORD ${DOCKER_HUB_PASSWORD:-}
 ENV DOCKER_HUB_EMAIL ${DOCKER_HUB_EMAIL:-}
+
+################################
+##     specify Jenkins URL    ##
+################################
+# use JENKINS_URL to persist Jenkins URL(maybe a fixed domain), otherwise it will be updated to Internal IP of Jenkins Server automatically.
+ENV JENKINS_URL ${JENKINS_URL:-}
 
 ###########################################
 ##   install additional jenkins plugin   ##
