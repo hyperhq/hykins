@@ -1,17 +1,17 @@
 Hykins User Guide
 =======================================================
 
-Hykins is a ***serverless*** Jenkins distro optimized for containers. Currently, Hykins supports [Hyper.sh](hyper.sh) as infrastructure provider, with more to be added easily.
+Hykins is a ***serverless*** Jenkins distro optimized for containers. Currently, Hykins supports [Hyper.sh](https://hyper.sh) as infrastructure provider, with more to be added easily.
 
 # Quickstart
 
 ## Setup
-First, you need to setup your account on [Hyper.sh](hyper.sh):
+First, you need to setup your account on [Hyper.sh](https://hyper.sh):
 
 - [Create an account](https://console.hyper.sh/register)
 - [Provide your billing information and complete your account](https://console.hyper.sh/billing/credit)
-- [Install `hyper` CLI on your laptop](https://docs.hyper.sh/GettingStarted/install.html)
-- [Generate a credential and configure the CLI](https://docs.hyper.sh/GettingStarted/launch_the_first_container.html)
+- [Generate a credential](https://docs.hyper.sh/GettingStarted/generate_api_credential.html)
+- [Install and configure `hyper` CLI on your laptop](https://docs.hyper.sh/GettingStarted/install.html)
 
 ## Deploy Hykins container
 There is a prebaked Docker image for [Hykins](https://hub.docker.com/r/hyperhq/hykins/) available in Docker Hub. You can simply pull the image to your Hyper.sh account:
@@ -40,7 +40,7 @@ $ hyper run --name hykins -d -P \
 ```
 
 > Notes:
-> - By default, Hykins is launched in `development` mode. See [blow](#production-setup) to see how to run Hykins in production mode
+> - By default, Hykins is launched in `development` mode. See [blow](https://github.com/hyperhq/hykins#production-setup) to see how to run Hykins in production mode
 > - In `development` mode, the recommended container size is `m1` (1GB)
 > - `ADMIN_USERNAME`/ `ADMIN_PASSWORD` is for the Hykins admin account (default: `admin`/`nimda`)
 > - `ACCESS_KEY`/ `SECRET_KEY` is the API credential of Hyper.sh
@@ -90,10 +90,11 @@ In Production Mode, you need to unlock Jenkins to be able to access:
 ![](https://raw.githubusercontent.com/hyperhq/hykins/master/images/job-general-config.png)
 
 Other tested base images are:
- - openjdk:8-jdk
- - hyperhq/jenkins-slave-centos
- - hyperhq/jenkins-slave-golang:1.7-centos
- - hyperhq/jenkins-slave-golang:1.7-ubuntu
+ - [oracle/openjdk:8](https://hub.docker.com/r/oracle/openjdk/)
+ - [openjdk:8-jdk](https://hub.docker.com/_/openjdk/)
+ - [hyperhq/jenkins-slave-centos](https://hub.docker.com/r/hyperhq/jenkins-slave-centos/)
+ - [hyperhq/jenkins-slave-golang:1.7-centos](https://hub.docker.com/r/hyperhq/jenkins-slave-golang/tags/)
+ - [hyperhq/jenkins-slave-golang:1.7-ubuntu](https://hub.docker.com/r/hyperhq/jenkins-slave-golang/tags/)
 
 ```
 //Step 3: Add build step "Execute shell"
