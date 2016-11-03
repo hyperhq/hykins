@@ -17,7 +17,7 @@ RUN ln -s ${JENKINS_HOME}/.hyper /.hyper && ln -s ${JENKINS_HOME}/.hyper /root/.
 ##   install jenkins plugin   ##
 ################################
 # install hyper plugin
-RUN /usr/local/bin/install-plugins.sh  hyper-commons:0.1.3 hyper-slaves:0.1.1
+RUN /usr/local/bin/install-plugins.sh  hyper-commons:0.1.3 hyper-slaves:0.1.2
 
 # install recommended plugin
 RUN /usr/local/bin/install-plugins.sh  cloudbees-folder timestamper workflow-aggregator subversion ldap \
@@ -79,5 +79,5 @@ RUN /usr/local/bin/install-plugins.sh ghprb
 ###########################################
 ##   install add trampoline              ##
 ###########################################
-#The source code is https://github.com/jenkinsci/hyper-slaves-plugin/tree/master/trampoline
-COPY script/trampoline /var/jenkins_home/war/WEB-INF/trampoline
+##The source code is https://github.com/jenkinsci/hyper-slaves-plugin/tree/master/trampoline
+#COPY script/trampoline /var/jenkins_home/war/WEB-INF/trampoline
