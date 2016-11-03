@@ -75,3 +75,9 @@ ENV JENKINS_URL ${JENKINS_URL:-}
 ###########################################
 # install GitHub pull request builder plugin
 RUN /usr/local/bin/install-plugins.sh ghprb
+
+###########################################
+##   install add trampoline              ##
+###########################################
+#The source code is https://github.com/jenkinsci/hyper-slaves-plugin/tree/master/trampoline
+COPY script/trampoline /var/jenkins_home/war/WEB-INF/trampoline
