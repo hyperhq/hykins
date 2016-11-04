@@ -40,7 +40,7 @@ $ hyper run --name hykins -d -P \
 ```
 
 > Notes:
-> - By default, Hykins is launched in `development` mode. See [blow](https://github.com/hyperhq/hykins#production-setup) to see how to run Hykins in production mode
+> - By default, Hykins is launched in `development` mode(the Setup Wizard will not appear). See [blow](https://github.com/hyperhq/hykins#production-setup) to see how to run Hykins in production mode
 > - In `development` mode, the recommended container size is `m1` (1GB)
 > - `ADMIN_USERNAME`/ `ADMIN_PASSWORD` is for the Hykins admin account (default: `admin`/`nimda`)
 > - `ACCESS_KEY`/ `SECRET_KEY` is the API credential of Hyper.sh
@@ -69,7 +69,7 @@ $ hyper fip attach $FIP hykins
 ## Unlock Jenkins
 In Production Mode, you need to unlock Jenkins to be able to access:
 - Open the web portal in your browser `http://${FIP}:8080`
-- Setup Wizard` will prompt to ask for initial admin password
+- Setup Wizard` will prompt to ask for initial admin password`
 - run `hyper exec -it hykins cat /var/jenkins_home/secrets/initialAdminPassword`
 
 ------------------------------------------------------------------------------
