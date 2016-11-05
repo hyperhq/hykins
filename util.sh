@@ -11,7 +11,7 @@ usage: ./util.sh <ACTION> [VERSION]
   build    - build image
   push     - push image to docker hub
   docker   - run jenkins-server in docker
-  hyper    - run jenkins-server in Hyper_
+  hyper    - run jenkins-server in Hyper.sh
 
 [VERSION]:
   lts             - jenkins             -> hyperhq/hykins:<LTS_VERSION>, latest
