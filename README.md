@@ -129,3 +129,11 @@ Trigger build manually in this demo.
 
 ### Slave container log
 ![](https://raw.githubusercontent.com/hyperhq/hykins/master/images/hyper-slave-container-log.png)
+
+
+
+# Update
+
+## 2016/11/17
+- update jenkins from 2.7.4 to 2.19.3
+- update hyper-slaves-plugin to 0.1.5(rely on docker-slaves-plugin)
