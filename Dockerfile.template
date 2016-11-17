@@ -17,7 +17,7 @@ RUN ln -s ${JENKINS_HOME}/.hyper /.hyper && ln -s ${JENKINS_HOME}/.hyper /root/.
 ##   install jenkins plugin   ##
 ################################
 # install hyper plugin
-RUN /usr/local/bin/install-plugins.sh  hyper-commons:0.1.5 hyper-slaves:0.1.4
+RUN /usr/local/bin/install-plugins.sh  hyper-commons:0.1.5 hyper-slaves:0.1.5
 
 # install recommended plugin
 RUN /usr/local/bin/install-plugins.sh  cloudbees-folder timestamper workflow-aggregator subversion ldap \
