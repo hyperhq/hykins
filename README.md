@@ -40,7 +40,7 @@ $ hyper run --name hykins -d -P \
 ```
 
 > Notes:
-> - By default, Hykins is launched in `development` mode(the Setup Wizard will not appear). See [blow](https://github.com/hyperhq/hykins#production-setup) to see how to run Hykins in production mode
+> - By default, Hykins is launched in `development` mode(the Setup Wizard will not appear). See [below](https://github.com/hyperhq/hykins#production-setup) to see how to run Hykins in production mode
 > - In `development` mode, the recommended container size is `m1` (1GB)
 > - `ADMIN_USERNAME`/ `ADMIN_PASSWORD` is for the Hykins admin account (default: `admin`/`nimda`)
 > - `ACCESS_KEY`/ `SECRET_KEY` is the API credential of Hyper.sh
