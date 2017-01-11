@@ -134,6 +134,10 @@ Trigger build manually in this demo.
 
 # Update
 
+## 2017/01/11
+- update jenkins from 2.19.3 to 2.19.4
+- update hyper-slaves-plugin to 0.1.6(retry when download slave.jar failed)
+
 ## 2016/11/17
 - update jenkins from 2.7.4 to 2.19.3
 - update hyper-slaves-plugin to 0.1.5(rely on docker-slaves-plugin)

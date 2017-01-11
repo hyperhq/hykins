@@ -1,5 +1,5 @@
 #REF: https://github.com/jenkinsci/docker
-FROM jenkins:2.19.3
+FROM jenkins:2.19.4
 MAINTAINER Jimmy Xu <jimmy@hyper.sh>
 
 USER root
@@ -17,7 +17,7 @@ RUN ln -s ${JENKINS_HOME}/.hyper /.hyper && ln -s ${JENKINS_HOME}/.hyper /root/.
 ##   install jenkins plugin   ##
 ################################
 # install hyper plugin
-RUN /usr/local/bin/install-plugins.sh  hyper-commons:0.1.5 hyper-slaves:0.1.5
+RUN /usr/local/bin/install-plugins.sh  hyper-commons:0.1.5 hyper-slaves:0.1.6
 
 # install recommended plugin
 RUN /usr/local/bin/install-plugins.sh  cloudbees-folder timestamper workflow-aggregator subversion ldap \
@@ -29,7 +29,7 @@ RUN /usr/local/bin/install-plugins.sh  cloudbees-folder timestamper workflow-agg
 ##     jenkins setting        ##
 ################################
 ENV JENKINS_HOME /var/jenkins_home
-ENV JENKINS_VERSION 2.19.3
+ENV JENKINS_VERSION 2.19.4
 WORKDIR $JENKINS_HOME
 VOLUME $JENKINS_HOME
 ENTRYPOINT ["/bin/tini", "--", "/usr/local/bin/jenkins.sh"]

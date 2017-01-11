@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LTS_VERSION="2.19.3"
+LTS_VERSION="2.19.4"
 
 function show_usage() {
   cat <<EOF
@@ -24,6 +24,7 @@ EOF
 
 function fn_build() {
   docker build --pull \
+    --build-arg http_proxy=${http_proxy} --build-arg https_proxy=${https_proxy} \
     --tag hyperhq/hykins:${TAG} .
 }
 
