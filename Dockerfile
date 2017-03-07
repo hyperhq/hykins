@@ -1,5 +1,5 @@
 #REF: https://github.com/jenkinsci/docker
-FROM jenkins:2.48
+FROM jenkins:2.49
 MAINTAINER Marky Jackson <marky.jackson@taulia.com>
 
 USER root
@@ -29,7 +29,7 @@ RUN /usr/local/bin/install-plugins.sh  cloudbees-folder timestamper workflow-agg
 ##     jenkins setting        ##
 ################################
 ENV JENKINS_HOME /var/jenkins_home
-ENV JENKINS_VERSION 2.48
+ENV JENKINS_VERSION 2.49
 WORKDIR $JENKINS_HOME
 VOLUME $JENKINS_HOME
 ENTRYPOINT ["/bin/tini", "--", "/usr/local/bin/jenkins.sh"]
