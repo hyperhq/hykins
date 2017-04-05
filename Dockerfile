@@ -78,6 +78,7 @@ RUN /usr/local/bin/install-plugins.sh ghprb
 
 ###########################################
 ##   install add trampoline              ##
-###########################################
+###########################################exercise
 ##The source code is https://github.com/jenkinsci/hyper-slaves-plugin/tree/master/trampoline
 #COPY script/trampoline /var/jenkins_home/war/WEB-INF/trampoline
+echo ${JENKINS_HOME}
