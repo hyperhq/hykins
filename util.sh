@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LTS_VERSION="2.55"
+LTS_VERSION="2.56"
 
 function show_usage() {
   cat <<EOF
