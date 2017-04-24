@@ -1,5 +1,5 @@
 #REF: https://github.com/jenkinsci/docker
-FROM jenkins:2.55
+FROM jenkins:2.56
 MAINTAINER Marky Jackson <marky.jackson@taulia.com>
 
 USER root
