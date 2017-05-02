@@ -1,6 +1,6 @@
 #REF: https://github.com/jenkinsci/docker
 FROM %JENKINS_REPO%:%JENKINS_VERSION%
-MAINTAINER Jimmy Xu <jimmy@hyper.sh>
+MAINTAINER Marky Jackson <marky.jackson@taulia.com>
 
 USER root
 
