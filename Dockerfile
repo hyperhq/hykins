@@ -1,5 +1,5 @@
 #REF: https://github.com/jenkinsci/docker
-FROM jenkins:2.19.4
+FROM jenkins/jenkins:2.138.3
 MAINTAINER Jimmy Xu <jimmy@hyper.sh>
 
 USER root
@@ -17,7 +17,7 @@ RUN ln -s ${JENKINS_HOME}/.hyper /.hyper && ln -s ${JENKINS_HOME}/.hyper /root/.
 ##   install jenkins plugin   ##
 ################################
 # install hyper plugin
-RUN /usr/local/bin/install-plugins.sh  hyper-commons:0.1.5 hyper-slaves:0.1.7
+RUN /usr/local/bin/install-plugins.sh  hyper-commons:0.1.5 hyper-slaves:0.1.11
 
 # install recommended plugin
 RUN /usr/local/bin/install-plugins.sh  cloudbees-folder timestamper workflow-aggregator subversion ldap \
@@ -29,10 +29,10 @@ RUN /usr/local/bin/install-plugins.sh  cloudbees-folder timestamper workflow-agg
 ##     jenkins setting        ##
 ################################
 ENV JENKINS_HOME /var/jenkins_home
-ENV JENKINS_VERSION 2.19.4
+ENV JENKINS_VERSION 2.138.3
 WORKDIR $JENKINS_HOME
 VOLUME $JENKINS_HOME
-ENTRYPOINT ["/bin/tini", "--", "/usr/local/bin/jenkins.sh"]
+ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/jenkins.sh"]
 # 8080 ：main web interface
 # 50000：will be used by attached slave agents
 EXPOSE 8080
