@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LTS_VERSION="2.19.4"
+LTS_VERSION="2.138.3"
 
 function show_usage() {
   cat <<EOF
@@ -107,7 +107,7 @@ case "${VERSION}" in
 esac
 
 sed "s/%JENKINS_REPO%/${JENKINS_REPO}/g" Dockerfile.template > Dockerfile
-sed -i "s/%JENKINS_VERSION%/${JENKINS_VERSION}/g" Dockerfile
+sed -i.bak "s/%JENKINS_VERSION%/${JENKINS_VERSION}/g" Dockerfile
 
 cat <<EOF
 
