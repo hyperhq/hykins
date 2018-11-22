@@ -137,7 +137,8 @@ Trigger build manually in this demo.
 ## 2018/11/22
 - update jenkins from 2.19.4 to 2.138.3
 - update hyper-slaves-plugin to 0.1.11 (add -workDir for slave.jar)
-- add groovy/disableStrictVerification (ref https://issues.jenkins-ci.org/browse/JENKINS-41384)
+- add groovy/disableStrictVerification (ref https://issues.jenkins-ci.org/browse/JENKINS-41384?filter=10244)
+- add groovy/CSRFProtection (ref https://wiki.jenkins.io/display/JENKINS/CSRF+Protection)
 
 ## 2017/01/11
 - update jenkins from 2.19.3 to 2.19.4
