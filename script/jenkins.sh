@@ -112,11 +112,16 @@ EOF
   echo "==============================="
 fi
 
-
 #copy setup-jenkins-script.groovy
 if [ -f /var/lib/jenkins/init.groovy.d/setup-jenkins-script.groovy ];then
   echo "override setup-jenkins-script.groovy"
-  cp /var/lib/jenkins/init.groovy.d/setup-jenkins-script.groovy $JENKINS_HOME/init.groovy.d/
+  cp -rf /var/lib/jenkins/init.groovy.d/setup-jenkins-script.groovy $JENKINS_HOME/init.groovy.d/
+fi
+
+#copy set-strict-verification.groovy
+if [ -f /var/lib/jenkins/init.groovy.d/set-strict-verification.groovy ];then
+  echo "override set-strict-verification.groovy"
+  cp -rf /var/lib/jenkins/init.groovy.d/set-strict-verification.groovy $JENKINS_HOME/init.groovy.d/
 fi
 ###############################
 

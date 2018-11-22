@@ -50,6 +50,7 @@ ENV ADMIN_PASSWORD ${ADMIN_PASSWORD:-nimda}
 RUN mkdir -p /var/lib/jenkins/init.groovy.d
 COPY groovy/disableSetupWizard/basic-security.groovy /var/lib/jenkins/init.groovy.d/basic-security.groovy
 COPY groovy/initJenkinsURL/setup-jenkins-script.groovy /var/lib/jenkins/init.groovy.d/setup-jenkins-script.groovy
+COPY groovy/disableStrictVerification/set-strict-verification.groovy /var/lib/jenkins/init.groovy.d/set-strict-verification.groovy
 RUN echo $JENKINS_VERSION > /var/lib/jenkins/jenkins.install.UpgradeWizard.state
 
 # replace the original jenkins.sh
