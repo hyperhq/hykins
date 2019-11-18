@@ -1,5 +1,5 @@
 #REF: https://github.com/jenkinsci/docker
-FROM jenkins:2.204
+FROM jenkins:2.205
 
 USER root
 
